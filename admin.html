@@ -1,0 +1,56 @@
+<!-- admin.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SmartGrade | Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="admin-body">
+  <header class="admin-header">
+    <h1>📘 SmartGrade Admin Dashboard</h1>
+    <button id="logoutBtn" class="btn-logout">Logout</button>
+  </header>
+
+  <main class="admin-main">
+    <!-- Grade Entry Form -->
+    <section class="form-section">
+      <h2>Add Grade</h2>
+      <form id="gradeForm">
+        <input type="text" id="studentName" placeholder="Student Name" required />
+        <input type="text" id="studentID" placeholder="Student ID" required />
+        <input type="text" id="subject" placeholder="Subject" required />
+        <input type="number" id="score" placeholder="Score (0-100)" required />
+        <input type="text" id="term" placeholder="Term (e.g., 2024/2025 - Sem 2)" required />
+        <button type="submit" class="btn-add">Add Grade</button>
+        <p id="formMsg" class="form-msg"></p>
+      </form>
+    </section>
+
+    <!-- Grade Records -->
+    <section class="grades-section">
+      <h2>All Grades</h2>
+      <table id="gradesTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>ID</th>
+            <th>Subject</th>
+            <th>Score</th>
+            <th>Grade</th>
+            <th>Term</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="gradesBody">
+          <!-- Grades will be loaded here -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script type="module" src="firebase/config.js"></script>
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>
